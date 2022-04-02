@@ -20,20 +20,20 @@ const promptManager = () => {
               return true;
           } else {
             console.log('Please enter your name');
-            return false:
+            return false;
           }
       }  
     },
     {
         type: 'input',
         name: 'employeeId',
-        message: 'Enter your employee ID number (Required)',
+        message: 'Please enter your employee ID number (Required)',
         validate: employeeId => {
             if (employeeId) {
                 return true;
             } else {
                 console.log('Please enter your employee ID number');
-                return false:
+                return false;
             }
         }
     },
@@ -46,7 +46,7 @@ const promptManager = () => {
                 return true;
             } else {
                 console.log('Please enter your email address');
-                return false:
+                return false;
             }
         }
     },
@@ -59,7 +59,7 @@ const promptManager = () => {
                 return true;
             } else {
                 console.log('Please enter your office number');
-                return false:
+                return false;
             }
         }
     },
@@ -93,5 +93,164 @@ const promptMenu = () =>{
         });
     
 };
+
+const promptEngineer = () => {
+    console.log(`
+    =================
+    Add a New Engineer
+    ================
+    `);
+
+    return inquirer.prompt([
+      { 
+        type: 'input',
+        name: 'name',
+        message: 'What is the name of the engineer? (Required)',
+        validate: engineerName => {
+            if (engineerName) {
+                return true;
+            } else {
+                console.log('Please enter the name of the engineer');
+                return false;
+            }    
+        }
+      },
+      {
+        type: 'input',
+        name: 'employeeId',
+        message: 'Please enter your employee ID number (Required)',
+        validate: employeeId => {
+            if (employeeId) {
+                return true;
+            } else {
+                console.log('Please enter your employee ID number');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please enter your email address (Required)',
+        validate: email => {
+            if (email) {
+                return true;
+            } else {
+                console.log('Please enter your email address');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'githubUsername',
+        message: 'Please enter Github Username (Required)',
+        validate: githubUsername  => {
+            if (githubUsername) {
+                return true;
+            } else {
+                console.log('Please enter your Github Username');
+                return false;
+            }
+        }
+    }
+  ]).then(answers => {
+    console.log(answers);
+    const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.githubUsername);
+    teamMembers.push(engineer);
+    promptMenu();
+  })
+
+};
+
+const promptIntern = () => {
+    console.log(`
+    ===============
+    Add a New Intern
+    ===============
+    `);
+
+    return inquirer.prompt([
+        { 
+          type: 'input',
+          name: 'name',
+          message: 'What is the name of the intern? (Required)',
+          validate: internName => {
+              if (internName) {
+                  return true;
+              } else {
+                  console.log('Please enter the name of the intern');
+                  return false;
+              }    
+          }
+        },
+        {
+            type: 'input',
+            name: 'employeeId',
+            message: 'Please enter your employee ID number (Required)',
+            validate: employeeId => {
+                if (employeeId) {
+                    return true;
+                } else {
+                    console.log('Please enter your employee ID number');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter your email address (Required)',
+            validate: email => {
+                if (email) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Please enter the name of your school (Required)',
+            validate: school => {
+                if (school) {
+                    return true;
+                } else {
+                    console.log('Please enter the name of your school');
+                    return false;
+                }
+            }
+        }
+    ]).then(answers => {
+        console.log(answers);
+        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.school);
+        teamMembers.push(intern);
+        promptMenu();
+    })
+        
+};
+
+const buildTeam = () => {
+    console.log(`
+    ==============
+    Finished building my team
+    ==============
+    `);
+
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, generateSite(teamMembers), "utf-8");
+}
+
+promptManager();
+
+
+
+
+
+
 
 
