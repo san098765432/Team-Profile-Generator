@@ -31,7 +31,7 @@ const generateEngineer = engineer => {
         <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${engineer.id}</li>
         <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
-        <li class="list-group-item">Github Username: <a target="_blank" href="https://github.com/${engineer.githubUsername}">$(engineer.githubUsername)</a></li>  
+        <li class="list-group-item">Github Username: <a target="_blank" href="https://github.com/${engineer.githubUsername}">${engineer.githubUsername}</a></li>  
        </ul>
        </div>
        `;
@@ -83,11 +83,13 @@ module.exports = team => {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     
      <script src="https://kit.fontawesome.com/1e0a13a89f.js" crossorigin="anonymous"></script>
+
+     <link rel="stylesheet" href="../dist/style.css">
 
     <title> Team Profile Generator </title>
 
