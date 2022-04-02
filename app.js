@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -63,11 +63,12 @@ const promptManager = () => {
             }
         }
     },
-    ]).then(answers => {
+    ])
+    .then(answers => {
         console.log(answers);
         const manager = new Manager(answers.name, answers.employeeId, answers.email, answers.officeNumber);
         teamMembers.push(manager);
-        prompt.Menu();
+        promptMenu();
     })
 };
 
@@ -96,7 +97,7 @@ const promptMenu = () =>{
 
 const promptEngineer = () => {
     console.log(`
-    =================
+    ================
     Add a New Engineer
     ================
     `);

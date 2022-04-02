@@ -7,7 +7,7 @@ const generateTeam = (team) => {
     //creating functions for each type of employee that returns HTML data 
     const generateManager = manager => {
       console.log(manager);
-      let managerHtml = `
+      let managerHtml =`
      <div class="card" style="width: 18rem;">
      <div class="card-header">
          ${manager.name} <br/>
@@ -23,7 +23,7 @@ const generateTeam = (team) => {
 }
 const generateEngineer = engineer => {
     console.log(engineer);
-    let engineerHtml = `
+    let engineerHtml =`
     <div class="card" style="width: 18rem;">
     <div class="card-header">
         ${engineer.name} <br/>
@@ -40,7 +40,7 @@ const generateEngineer = engineer => {
 }
 const generateIntern = intern => {
     console.log(intern);
-    let internHtml = `
+    let internHtml =`
     <div class="card" style="width: 18rem;">
     <div class="card-header">
         ${intern.name} <br/>
@@ -70,12 +70,39 @@ for (let i = 0; i < team.length; i++) {
 
 //join the HTML blocks
 return html.join('');
+
 }
 
+
+//exporting function to create the page
 module.exports = team => {
     return `
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    `
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+     <script src="https://kit.fontawesome.com/1e0a13a89f.js" crossorigin="anonymous"></script>
+
+    <title> Team Profile Generator </title>
+
+</head>
+
+<body>
+    <header>
+        My Team
+    </header>
+
+    <main> ${generateTeam(team)} </main>
+</body>
+</html>
+    `;
 }
+
 
 

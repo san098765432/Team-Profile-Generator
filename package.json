@@ -95,6 +95,7 @@
     "imurmurhash": "^0.1.4",
     "inflight": "^1.0.6",
     "inherits": "^2.0.4",
+    "inquirer": "^8.2.2",
     "is-arrayish": "^0.2.1",
     "is-core-module": "^2.8.1",
     "is-fullwidth-code-point": "^3.0.0",
@@ -250,9 +251,11 @@
     "yallist": "^4.0.0",
     "yargs": "^16.2.0",
     "yargs-parser": "^20.2.9"
-  },"scripts": {
+  },
+  "scripts": {
     "test": "jest"
- }, "repository": {
+  },
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/san098765432/Team-Profile-Generator.git"
   },
@@ -262,6 +265,5 @@
   "bugs": {
     "url": "https://github.com/san098765432/Team-Profile-Generator/issues"
   },
-  "homepage": "https://github.com/san098765432/Team-Profile-Generator#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/san098765432/Team-Profile-Generator#readme"
 }
