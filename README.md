@@ -44,5 +44,11 @@ https://github.com/san098765432/Team-Profile-Generator
 # LINK TO SAMPLE HTML FILE GENERATED
 http://127.0.0.1:5500/output/team.html
 
+# SCREENSHOT OF HTML GENERATED FROM USER INPUT
+
+<figure>
+<img src="./screenshot.png">
+</figure>
+
 # LINK TO WALK-THROUGH VIDEO 
 https://drive.google.com/file/d/1b2ZvcvQfENcnQ3MVCBcSjjViJFEgp_uq/view?usp=sharing
